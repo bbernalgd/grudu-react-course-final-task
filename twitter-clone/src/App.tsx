@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Header } from "./components/Header/Header";
 
 function App() {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+  return (
+    <div className="bg-gray-900 h-screen">
+      <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;

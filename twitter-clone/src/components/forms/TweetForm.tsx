@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/img/twitter-logo.png";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitBtn } from "../buttons/SubmitBtn";
 
 interface IFormInputs {
   id: string;
@@ -41,19 +42,13 @@ export const TweetForm = () => {
               name="message"
               id="message"
               rows={4}
-              className="block resize-none p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-t-0 border-x-0 border-b-gray-300 focus:ring-sky-600 
-              focus:border-sky-600 dark:bg-gray-900 dark:border-gray-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sky-600 dark:focus:border-sky-600"
+              className="block resize-none p-2.5 w-full text-md border-t-0 border-x-0 focus:ring-sky-600 
+              focus:border-sky-600 bg-gray-900 border-gray-800 placeholder-gray-400 text-white dark:focus:ring-sky-600 dark:focus:border-sky-600"
               placeholder="Write your thoughts here..."
             />
           </div>
         </div>
-        <input
-          className="w-fit cursor-pointer text-white bg-sky-500 
-          hover:bg-sky-600 focus:ring-1 focus:ring-blue-100 font-medium 
-          rounded-full text-sm px-5 py-2.5 mr-2 my-3 ml-auto disabled:cursor-default disabled:hover:bg-sky-500 disabled:opacity-60 disabled:focus:opacity-60"
-          type="submit"
-          value="Tweet"
-        />
+        <SubmitBtn btnText="Tweet"/>
       </div>
     </form>
   );

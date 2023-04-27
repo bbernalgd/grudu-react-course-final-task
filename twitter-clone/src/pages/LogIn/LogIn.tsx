@@ -1,13 +1,11 @@
-import React from 'react'
-import { LogInForm } from '../../components/forms/LogInForm';
+import React from "react";
+import { FormContainer } from "../../components/formContainer/FormContainer";
+import { LogInForm } from "../../components/forms";
 
 export const LogIn = () => {
   return (
-    <div className="flex flex-col mx-auto max-w-xl mt-14">
-      <h1 className="text-xl md:text-3xl text-center text-white my-8">
-        Sign in to Twitter
-      </h1>
+    <FormContainer title={"Sign in to Twitter"}>
       <LogInForm />
-    </div>
+    </FormContainer>
   );
-}
+};

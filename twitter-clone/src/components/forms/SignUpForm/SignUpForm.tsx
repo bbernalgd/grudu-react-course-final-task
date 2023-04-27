@@ -1,21 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { SubmitBtn } from "../buttons/SubmitBtn"
-
-const styles = {
-  container: "max-w-2xl text-lg p-4 text-white",
-  form: "flex flex-col",
-  input:
-  "mt-4 bg-gray-900 border-gray-800 placeholder-gray-400\
-    rounded-md focus:border-sky-500",
-  link: "text-sky-500 hover:border-sky-500 hover:border-b",
-  p: "text-base",
-  error: "text-red-600 text-base font-light pl-2 mt-2",
-  inputError:
-  "placeholder-red-600 border-red-600 rounded-md\
-    mt-4 bg-gray-900 border-gray-800 focus:border-red-600\
-    focus:ring-red-600",
-};
+import { SubmitBtn } from "../../buttons/SubmitBtn";
+import { styles } from "./styles";
 
 interface IFormInputs {
   id: string;
@@ -39,7 +25,7 @@ export const SignUpForm = () => {
       password: "",
     },
   });
-  
+
   const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
 
   return (
@@ -75,9 +61,7 @@ export const SignUpForm = () => {
             className={!errors.password ? styles.input : styles.inputError}
           />
           {errors.password && (
-            <p className={styles.error}>
-              Please enter a valid password.
-            </p>
+            <p className={styles.error}>Please enter a valid password.</p>
           )}
           <input
             type="text"
@@ -86,7 +70,7 @@ export const SignUpForm = () => {
             className={!errors.name ? styles.input : styles.inputError}
           />
           {errors.name && <p className={styles.error}>What’s your name?</p>}
-          <SubmitBtn btnText="Sign Up" />
+          <SubmitBtn text="Sign Up" />
         </form>
         <p className={styles.p}>
           Already have an account?{" "}

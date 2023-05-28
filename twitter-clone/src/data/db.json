@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "avatar": "https://robohash.org/undequisodit.png?size=300x300&set=set1",
+      "name": "Brenda Bernal",
+      "email": "bren@gmail.com",
+      "username": "bren123",
+      "password": "12345_6",
+      "tweets": [
+        {
+          "id": 98,
+          "user_id": 1,
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat."
+        },
+        {
+          "id": 99,
+          "user_id": 1,
+          "content": "Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ]
+    }
+  ]
+}

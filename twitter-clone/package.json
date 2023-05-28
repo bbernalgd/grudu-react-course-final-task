@@ -22,7 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "json-server --watch 'src/data/db.json' react-scripts start ",
+    "start": " react-scripts start ",
+    "server": "json-server --watch src/api/db.json --port 5000",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "build": "react-scripts build",
     "test": "react-scripts test",

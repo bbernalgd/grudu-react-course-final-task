@@ -1,38 +1,50 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { SubmitBtn } from "../../buttons/SubmitBtn";
-import {styles } from "./styles"
+import { styles } from "./styles";
 
-interface IFormInputs {
-  username: string;
+interface FormInputs {
+  email: string;
   password: string;
 }
 
 export const LogInForm = () => {
+  const { container, form, input, link, p, error, inputError } = styles;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInputs>({
+  } = useForm<FormInputs>({
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
 
-  const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInputs> = (formData) => {
+    console.log(formData);
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data.user));
+  };
 
   return (
-    <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <div className={container}>
+      <form className={form} onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
-          placeholder="Username"
-          {...register("username", { required: true, min: 1, maxLength: 15 })}
-          className={!errors.username ? styles.input : styles.inputError}
+          placeholder="Email"
+          {...register("email", { required: true, min: 1, maxLength: 15 })}
+          className={!errors.email ? input : inputError}
         />
-        {errors.username && (
-          <p className={styles.error}>Please enter a valid username.</p>
+        {errors.email && (
+          <p className={error}>Please enter a valid email.</p>
         )}
         <input
           type="password"
@@ -42,18 +54,18 @@ export const LogInForm = () => {
             min: 8,
             maxLength: 256,
           })}
-          className={!errors.password ? styles.input : styles.inputError}
+          className={!errors.password ? input : inputError}
         />
         {errors.password && (
-          <p className={styles.error}>Please enter your password.</p>
+          <p className={error}>Please enter your password.</p>
         )}
         <SubmitBtn text="Log In" />
       </form>
-      <p className={styles.p}>
+      <p className={p}>
         Don’t have an account?{" "}
-        <a className={styles.link} href="">
+        <Link to="/signup" className={link}>
           Sign Up
-        </a>
+        </Link>
       </p>
     </div>
   );

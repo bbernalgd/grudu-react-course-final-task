@@ -8,10 +8,10 @@ const styles = {
   disabled:opacity-60"
 };
 
-type props = {
-  text: string;
-};
+interface BtnProps {
+  text: string
+}
 
-export const SubmitBtn = ({ text }: props) => (
-  <input className={styles.btn} type="submit" value={text} disabled={true} />
+export const SubmitBtn = ({ text }: BtnProps) => (
+  <input className={styles.btn} type="submit" value={text} />
 );

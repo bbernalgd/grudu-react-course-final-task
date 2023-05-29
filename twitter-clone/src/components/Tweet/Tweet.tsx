@@ -10,19 +10,21 @@ export interface TweetProps {
 }
 
 export const Tweet = ({ name, username, avatar, content }: TweetProps) => {
+  const { nameText, usernameText, tweetContent, container, flexContainer, imgBasis, imgContainer, imgAvatar } = styles;
+
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.flexContainer}>
-          <div className={styles.imgBasis}>
-            <div className={styles.imgContainer}>
-              <img className={styles.imgAvatar} src={avatar} alt="image description" />
+      <div className={container}>
+        <div className={flexContainer}>
+          <div className={imgBasis}>
+            <div className={imgContainer}>
+              <img className={imgAvatar} src={avatar}/>
             </div>
           </div>
           <div>
-            <p className={styles.name}>{name}</p>
-            <p className={styles.username}>@{username}</p>
-            <div className={styles.tweetContent}>
+            <p className={nameText}>{name}</p>
+            <p className={usernameText}>@{username}</p>
+            <div className={tweetContent}>
               <p>{content}</p>
             </div>
           </div>

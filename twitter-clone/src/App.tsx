@@ -6,11 +6,17 @@ import { LogIn, SignUp, Home } from "./pages";
 const App = () => {
   return ( 
     <>
-    <Header />
     <Routes>
+      <Route path="/" element={<SignUp />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<LogIn />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={
+      <>
+        <Header />
+        <Home />
+      </>
+      } />
+      
     </Routes>
     </>
   );

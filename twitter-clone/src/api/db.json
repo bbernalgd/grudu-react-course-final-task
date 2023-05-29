@@ -1,23 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Brenda Bernal",
-      "email": "bren@gmail.com",
-      "username": "bren123",
-      "password": "12345_6",
-      "tweets": [
-        {
-          "id": 98,
-          "user_id": 1,
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat."
-        },
-        {
-          "id": 99,
-          "user_id": 1,
-          "content": "Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        }
-      ]
+      "email": "bren@test.com",
+      "password": "$2a$10$3pNvSI1FuIwRhpveFCE7T.Oxw3I0V5MIFpaA/4BcCQ4qADA4IdEie",
+      "id": "c9ca760f",
+      "name": "brenda bernal",
+      "username": "bren96",
+      "tweets": []
     }
   ]
 }

@@ -44,7 +44,7 @@ export const TweetForm = () => {
             placeholder="Write your thoughts here..."
           />
         </div>
-        <SubmitBtn text="Tweet" />
+        <SubmitBtn text="Tweet"/>
       </div>
     </form>
   );
